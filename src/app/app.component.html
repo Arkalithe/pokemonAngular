@@ -1,14 +1,25 @@
 <h1>Liste des Pokemons</h1>
 <input #input (keyup.enter)="selectPokemon(input.value)" type="number" />
 
-@if(pokemonSelected){
-<p>Vous avez selectionner le pokemon: {{ pokemonSelected.name }}</p>
-} @else {
-<p>Aucun pokemon n'a été trouver.</p>
-} @for (pokemon of pokemonList; track pokemon.id) {
-<p>{{ pokemon.name }}</p>
-}
-
+<div class="container">
+    <div class="row">
+        @for (pokemon of pokemonList; track pokemon.id) {
+        <div class="col s6 m4 ">
+            <div class="card horizontal z-depth-1">
+                <div class="card-image">
+                    <img class="responsive-img" src="{{pokemon.picture}}" alt="{{pokemon.name}}">
+                </div>
+                <div class="card-stacked">
+                    <div card="card-content">
+                        <h3 class="">{{ pokemon.name }}</h3>
+                        <p class="">{{ pokemon.created }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
 <!-- <p>{{ pokemonList[0].name }}</p>
 <p>{{ pokemonList[1].name }}</p>
 <p>{{ pokemonList[2].name }}</p>
