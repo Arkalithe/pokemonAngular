@@ -5,14 +5,14 @@
     <div class="row">
         @for (pokemon of pokemonList; track pokemon.id) {
         <div class="col s6 m4 ">
-            <div class="card horizontal z-depth-1">
+            <div class="card horizontal" pokemonBorderCard [pokemonName]="pokemon">
                 <div class="card-image">
-                    <img class="responsive-img" src="{{pokemon.picture}}" alt="{{pokemon.name}}">
+                    <img class="responsive-img" [src]="pokemon.picture" [alt]="pokemon.name">
                 </div>
                 <div class="card-stacked">
                     <div card="card-content">
-                        <h3 class="">{{ pokemon.name }}</h3>
-                        <p class="">{{ pokemon.created }}</p>
+                        <h3>{{ pokemon.name }}</h3>
+                        <p> {{ pokemon.created | date:"dd/MM/yyyy" }} </p>
                     </div>
                 </div>
             </div>
