@@ -1,34 +1,10 @@
-<h1>Liste des Pokemons</h1>
-<input #input (keyup.enter)="selectPokemon(input.value)" type="number" />
-
-<div class="container">
-    <div class="row">
-        @for (pokemon of pokemonList; track pokemon.id) {
-        <div class="col s6 m4 ">
-            <div class="card horizontal" pokemonBorderCard [pokemonName]="pokemon">
-                <div class="card-image">
-                    <img class="responsive-img" [src]="pokemon.picture" [alt]="pokemon.name">
-                </div>
-                <div class="card-stacked">
-                    <div card="card-content">
-                        <h3>{{ pokemon.name }}</h3>
-                        <p> {{ pokemon.created | date:"dd/MM/yyyy" }} </p>
-                    </div>
-                </div>
-            </div>
+<header>
+    <nav>
+        <div class="nav-wrapper teal">
+            <a href="#" class="brand-logo center">Pokédex
+            </a>
         </div>
-        }
-    </div>
-</div>
-<!-- <p>{{ pokemonList[0].name }}</p>
-<p>{{ pokemonList[1].name }}</p>
-<p>{{ pokemonList[2].name }}</p>
-<p>{{ pokemonList[3].name }}</p>
-<p>{{ pokemonList[4].name }}</p>
-<p>{{ pokemonList[5].name }}</p>
-<p>{{ pokemonList[6].name }}</p>
-<p>{{ pokemonList[7].name }}</p>
-<p>{{ pokemonList[8].name }}</p>
-<p>{{ pokemonList[9].name }}</p>
-<p>{{ pokemonList[10].name }}</p>
-<p>{{ pokemonList[11].name }}</p> -->
+    </nav>
+</header>
+
+<router-outlet></router-outlet>
