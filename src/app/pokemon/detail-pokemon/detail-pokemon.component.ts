@@ -28,6 +28,8 @@ export class DetailPokemonComponent implements OnInit {
     }
   }
 
+  deletePokemon() {}
+
   goToPokemonList() {
     this.router.navigate(["/pokemons"]);
   }
