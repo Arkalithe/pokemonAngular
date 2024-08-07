@@ -9,7 +9,7 @@ import { ActivatedRoute } from "@angular/router";
     <h2 class="center">Editer {{ pokemon?.name }}</h2>
     @if (pokemon) {
       <p class="center">
-        <img ngSrc="pokemon.picture" fill />
+        <img [src]="pokemon.picture" />
       </p>
     }
     @if (pokemon) {
