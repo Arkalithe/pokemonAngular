@@ -9,7 +9,7 @@
                     <img [src]="pokemon.picture" [alt]="pokemon.name">
                 </div>
                 <div class="card-stacked">
-                    <div card="card-content">
+                    <div class="card-content">
                         <h3>{{ pokemon.name }}</h3>
                         <p> {{ pokemon.created | date:"dd/MM/yyyy" }} </p>
                         @for (type of pokemon.types; track $index) {
@@ -24,3 +24,7 @@
         }
     </div>
 </div>
+
+<a class="btn-floating btn-large waves-effect waves-light red z-depth-3"
+   style="position: fixed; bottom: 25px; right: 25px"
+   routerLink="/pokemon/add"> + </a>
