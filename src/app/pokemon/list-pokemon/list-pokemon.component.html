@@ -2,25 +2,27 @@
 
 <div class="container">
     <div class="row">
+        <app-search-pokemon></app-search-pokemon>
+
         @for (pokemon of pokemonList; track pokemon.id) {
-        <div class="col s6 m4 ">
-            <div class="card horizontal" pokemonBorderCard (click)="goToPokemon(pokemon)">
-                <div class="card-image">
-                    <img [src]="pokemon.picture" [alt]="pokemon.name">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <h3>{{ pokemon.name }}</h3>
-                        <p> {{ pokemon.created | date:"dd/MM/yyyy" }} </p>
-                        @for (type of pokemon.types; track $index) {
-                        <span [class]="type | pokemonTypeColor">
+            <div class="col s6 m4 ">
+                <div class="card horizontal" pokemonBorderCard (click)="goToPokemon(pokemon)">
+                    <div class="card-image">
+                        <img [src]="pokemon.picture" [alt]="pokemon.name">
+                    </div>
+                    <div class="card-stacked">
+                        <div class="card-content">
+                            <h3>{{ pokemon.name }}</h3>
+                            <p> {{ pokemon.created | date:"dd/MM/yyyy" }} </p>
+                            @for (type of pokemon.types; track $index) {
+                                <span [class]="type | pokemonTypeColor">
                             {{ type }}
                         </span>
-                        }
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         }
     </div>
 </div>
