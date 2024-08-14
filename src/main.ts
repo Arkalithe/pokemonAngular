@@ -20,6 +20,7 @@ const routes: Routes = [
   },
   {
     path: "login",
+    title: "login",
     loadComponent: () =>
       import("./app/login/login.component").then(
         (module) => module.LoginComponent,
@@ -27,6 +28,7 @@ const routes: Routes = [
   },
   {
     path: "**",
+    title: "Page not Found",
     loadComponent: () =>
       import("./app/page-not-found/page-not-found.component").then(
         (module) => module.PageNotFoundComponent,
