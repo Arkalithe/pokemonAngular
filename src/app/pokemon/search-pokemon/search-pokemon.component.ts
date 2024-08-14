@@ -3,11 +3,14 @@ import {Pokemon} from "../pokemon";
 import {Router} from "@angular/router";
 import {debounceTime, distinctUntilChanged, Observable, Subject, switchMap} from "rxjs";
 import {PokemonService} from "../pokemon.service";
+import { AsyncPipe } from '@angular/common';
 
 
 @Component({
     selector: 'app-search-pokemon',
     templateUrl: './search-pokemon.component.html',
+    standalone: true,
+    imports: [AsyncPipe],
 })
 export class SearchPokemonComponent implements OnInit {
     searchTerms = new Subject<string>();

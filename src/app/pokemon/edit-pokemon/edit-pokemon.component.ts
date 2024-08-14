@@ -2,10 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { Pokemon } from "../pokemon";
 import { PokemonService } from "../pokemon.service";
 import { ActivatedRoute } from "@angular/router";
+import { PokemonFormComponent } from "../pokemon-form/pokemon-form.component";
 
 @Component({
-  selector: "app-edit-pokemon",
-  template: `
+    selector: "app-edit-pokemon",
+    template: `
     <h2 class="center">Editer {{ pokemon?.name }}</h2>
     @if (pokemon) {
       <p class="center">
@@ -16,7 +17,9 @@ import { ActivatedRoute } from "@angular/router";
       <app-pokemon-form [pokemon]="pokemon"></app-pokemon-form>
     }
   `,
-  styles: ``,
+    styles: ``,
+    standalone: true,
+    imports: [PokemonFormComponent],
 })
 export class EditPokemonComponent implements OnInit {
   pokemon: Pokemon | undefined;

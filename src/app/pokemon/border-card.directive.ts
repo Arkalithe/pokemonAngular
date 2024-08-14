@@ -1,7 +1,8 @@
 import { Directive, ElementRef, HostListener, Input } from "@angular/core";
 
 @Directive({
-  selector: "[pokemonBorderCard]",
+    selector: "[pokemonBorderCard]",
+    standalone: true,
 })
 export class BorderCardDirective {
   private initalColor: string = "#f5f5f5";

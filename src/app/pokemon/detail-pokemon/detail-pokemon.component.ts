@@ -3,11 +3,20 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 import { Pokemon } from "../pokemon";
 import { PokemonService } from "../pokemon.service";
+import { PokemonTypeColorPipe } from "../pokemon-type-color.pipe";
+import { DatePipe } from "@angular/common";
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
-  selector: "app-detail-pokemon",
-  templateUrl: "./detail-pokemon.component.html",
-  styles: ``,
+    selector: "app-detail-pokemon",
+    templateUrl: "./detail-pokemon.component.html",
+    styles: ``,
+    standalone: true,
+    imports: [
+        LoaderComponent,
+        DatePipe,
+        PokemonTypeColorPipe,
+    ],
 })
 export class DetailPokemonComponent implements OnInit {
   pokemonList: Pokemon[];
